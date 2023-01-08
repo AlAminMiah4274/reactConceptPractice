@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 const styleObj = { fontSize: '2rem', color: 'red', backgroundColor: 'lightgreen' };
@@ -14,6 +14,7 @@ function App() {
       </article>
       <Blog></Blog>
       <Mobile></Mobile>
+      <Todo></Todo>
     </div>
   );
 }
@@ -65,6 +66,26 @@ const Mobile = () => {
     <div>
       <h2>{count}</h2>
       <button onClick={decreaseCount}>battery down</button>
+    </div>
+  );
+}
+
+const Todo = () => {
+
+  const [todos, setTodo] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(res => res.json())
+      .then(data => setTodo(data))
+  }, []);
+
+  return (
+    <div>
+      <h1>To Do Lists: {todos.length}</h1>
+      {
+        todos.map(todo => <li>{todo.title}</li>)
+      }
     </div>
   );
 }
