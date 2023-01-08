@@ -23,34 +23,16 @@ const Blog = () => {
   return (
     <div>
       <h1>Parent Blog</h1>
-      <BlogOne heading={'Saint Martin Tour'} author={'Al Amin Miah'}></BlogOne>
-      <BlogTwo heading={'Coxes Bazar Tour'} author={'Sabbir Howladar'}></BlogTwo>
-      <BlogThree heading={'Bandarban Tour'} author={'Masum Billah'}></BlogThree>
+      <BlogDescription heading={'Saint Martin Tour'} author={'Al Amin Miah'}></BlogDescription>
+      <BlogDescription heading={'Coxes Bazar Tour'} author={'Sabbir Howladar'}></BlogDescription>
+      <BlogDescription heading={'Bandarban Tour'} author={'Masum Billah'}></BlogDescription>
     </div>
   );
 }
 
-const BlogOne = (props) => {
+const BlogDescription = (props) => {
   return (
     <div style={{ backgroundColor: 'lightskyblue' }}>
-      <h3>Heading: {props.heading}</h3>
-      <p>Author: {props.author}</p>
-    </div>
-  );
-}
-
-const BlogTwo = (props) => {
-  return (
-    <div style={{ backgroundColor: 'lightpink' }}>
-      <h3>Heading: {props.heading}</h3>
-      <p>Author: {props.author}</p>
-    </div>
-  );
-}
-
-const BlogThree = (props) => {
-  return (
-    <div style={{ backgroundColor: 'lightgray' }}>
       <h3>Heading: {props.heading}</h3>
       <p>Author: {props.author}</p>
     </div>
