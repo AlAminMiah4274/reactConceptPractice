@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 const styleObj = { fontSize: '2rem', color: 'red', backgroundColor: 'lightgreen' };
@@ -12,6 +13,7 @@ function App() {
         </p>
       </article>
       <Blog></Blog>
+      <Mobile></Mobile>
     </div>
   );
 }
@@ -19,26 +21,51 @@ function App() {
 const Blog = () => {
   return (
     <div>
-      <h3>Parent Blog</h3>
+      <h1>Parent Blog</h1>
+      <BlogOne heading={'Saint Martin Tour'} author={'Al Amin Miah'}></BlogOne>
+      <BlogTwo heading={'Coxes Bazar Tour'} author={'Sabbir Howladar'}></BlogTwo>
+      <BlogThree heading={'Bandarban Tour'} author={'Masum Billah'}></BlogThree>
     </div>
   );
 }
 
 const BlogOne = (props) => {
   return (
-    <div></div>
+    <div style={{ backgroundColor: 'lightskyblue' }}>
+      <h3>Heading: {props.heading}</h3>
+      <p>Author: {props.author}</p>
+    </div>
   );
 }
 
 const BlogTwo = (props) => {
   return (
-    <div></div>
+    <div style={{ backgroundColor: 'lightpink' }}>
+      <h3>Heading: {props.heading}</h3>
+      <p>Author: {props.author}</p>
+    </div>
   );
 }
 
 const BlogThree = (props) => {
   return (
-    <div></div>
+    <div style={{ backgroundColor: 'lightgray' }}>
+      <h3>Heading: {props.heading}</h3>
+      <p>Author: {props.author}</p>
+    </div>
+  );
+}
+
+const Mobile = () => {
+  const [count, setCount] = useState(100);
+
+  const decreaseCount = () => setCount(count - 10);
+
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={decreaseCount}>battery down</button>
+    </div>
   );
 }
 
